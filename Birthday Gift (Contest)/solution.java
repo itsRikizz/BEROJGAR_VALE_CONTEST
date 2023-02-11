@@ -1,9 +1,10 @@
 import java.io.*; // for handling input/output
 
 import java.util.*; // contains Collections framework
+
 class Main {
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
@@ -11,9 +12,9 @@ class Main {
 
         int mat[][] = new int[n][n];
 
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
 
-            for(int j = 0; j < n; j++) {
+            for (int j = 0; j < n; j++) {
 
                 mat[i][j] = sc.nextInt();
 
@@ -22,13 +23,13 @@ class Main {
         }
 
         String s = sc.next();
-        for(int k = 0; k < s.length(); k++) {
+        for (int k = 0; k < s.length(); k++) {
 
             char ch = s.charAt(k);
 
-            for(int i = 0; i < n; i++) {
+            for (int i = 0; i < n; i++) {
 
-                for(int j = i; j < n; j++) {
+                for (int j = i; j < n; j++) {
 
                     int temp = mat[i][j];
 
@@ -40,15 +41,15 @@ class Main {
 
             }
 
-            if(ch == 'R') {
+            if (ch == 'R') {
 
-                for(int i = 0; i < n; i++) {
+                for (int i = 0; i < n; i++) {
 
                     int low = 0;
 
                     int high = n - 1;
 
-                    while(low < high) {
+                    while (low < high) {
 
                         int temp = mat[i][low];
 
@@ -62,15 +63,15 @@ class Main {
                     }
                 }
             }
-            if(ch == 'L') {
+            if (ch == 'L') {
 
-                for(int i = 0; i < n; i++) {
+                for (int i = 0; i < n; i++) {
 
                     int low = 0;
 
                     int high = n - 1;
 
-                    while(low < high) {
+                    while (low < high) {
 
                         int temp = mat[low][i];
 
@@ -79,19 +80,24 @@ class Main {
                         mat[high][i] = temp;
 
                         low++;
-                    high--;
+                        high--;
 
-                    }  }
-            } }
-        for(int i = 0; i < n; i++) {
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < n; i++) {
 
-            for(int j = 0; j < n; j++) {
+            for (int j = 0; j < n; j++) {
 
                 System.out.print(mat[i][j] + " ");
 
             }
 
-            if(i == n - 1) break;
+            if (i == n - 1)
+                break;
             System.out.println();
 
-        } }}
+        }
+    }
+}
